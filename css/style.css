@@ -73,7 +73,7 @@ body {
 }
 
 /* Mobile breakpoint */
-@media (max-width: 1023px) {
+@media screen and (max-width: 1023px) {
 
 h1 {
     color: #ffcc00;
@@ -82,7 +82,7 @@ h1 {
 }
 
 /* Desktop breakpoint */
-@media (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
 
 .mainContainer {
     width: 980px;
