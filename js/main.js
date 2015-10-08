@@ -33,11 +33,12 @@ $(document).ready(function () {
 			$(this).val("");
 	});
 
-	$(".loginForm .password").focus(function () {
+	$(".loginForm").on("focus", ".password", function () {
 		// empty the input and change type to password
 		if ($(this).val().indexOf(passwordPlaceholder) === 0) {
-			$(this).val("");
-			$(this).attr("type", "password");
+			$passwordInput = $("<input type='password' name='password' class='formField password'/>");
+			$(this).replaceWith($passwordInput);
+			$(".loginForm .password").focus();
 		}
 	});
 
@@ -47,10 +48,11 @@ $(document).ready(function () {
 		}
 	});
 
-	$(".loginForm .password").blur(function () {
+	$(".loginForm").on("blur", ".password", function () {
 		if (!$(this).val()) {
-			$(this).val(passwordPlaceholder);
-			$(this).attr("type", "text");
+			$textInput = $("<input type='text' name='password' class='formField password'/>");
+			$(this).replaceWith($textInput);
+			$(".loginForm .password").val(passwordPlaceholder);
 		}
 	});
 

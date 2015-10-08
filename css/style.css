@@ -39,6 +39,7 @@ body {
     padding: 0;
     margin: 0;
     font-family: 'NeoSans-Regular';
+    -webkit-text-size-adjust: 100%;
 }
 
 .chevron {
@@ -598,6 +599,10 @@ body {
 	left: 115px;
 	padding: 25px 23px 0 23px;
 	width: auto;
+}
+
+.smallButtonContainer {
+	margin-top: 12px;
 }
 
 .smallButtonContainer .smallButtonWrapper {
