@@ -484,6 +484,7 @@ body {
 	width: 100%;
 	margin-top: 35px;
 	overflow: hidden;
+	position: relative;
 }
 
 .contentSlideShow .slideShow {
@@ -495,12 +496,15 @@ body {
 	width: 920px;
 	height: 100%;
 	float: left;
+}
+
+.contentSlideShow .slideInner {
 	position: relative;
 	background-size: 100% auto;
 	background-color: #ffffff;
 }
 
-.contentSlideShow .slide:before {
+.contentSlideShow .slideInner:before {
 	content: '';
 	width: 0;
 	height: 0;
@@ -512,7 +516,7 @@ body {
 	border-color: #53b8c4 transparent transparent transparent;
 }
 
-.contentSlideShow .slide:after {
+.contentSlideShow .slideInner:after {
 	content: '';
 	width: 0;
 	height: 0;
@@ -542,7 +546,7 @@ body {
 	padding: 24px 120px 25px 64px;
 }
 
-.contentSlideShow .slideInfo .title {
+.contentSlideShow .title {
 	font-size: 30px;
 	color: #666666;
 	margin-bottom: 15px;
@@ -551,6 +555,7 @@ body {
 .contentSlideShow .slideInfo .articleImage {
 	width: 25%;
 	display: block;
+	float: left;
 }
 
 .contentSlideShow .slideInfo .articleText {
@@ -563,6 +568,7 @@ body {
 	-webkit-font-smoothing : none;
 	letter-spacing: 0.014em;
 	line-height: 15px;
+	float: left;
 }
 
 .contentSlideShow .slideShowControlContainer {
@@ -703,6 +709,50 @@ body > .loginFormOverlay {
 
 .smallButtonContainer .pull-left {
 	width: 100%;
+}
+
+.contentSlideShow .slideInner:after {
+	content: '';
+	border: none;
+}
+
+.contentSlideShow .title {
+	margin-bottom: 8px;
+	max-width: 65%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.contentSlideShow .slide .readArticle {
+	color: #53b8c4;
+}
+
+.contentSlideShow .slideInfo {
+	padding: 60px 30px;
+}
+
+.contentSlideShow .slideInfo .articleImage {
+	float: right;
+	width: 50%;
+}
+
+.contentSlideShow .slideInfo .articleText {
+	float: right;
+	width: 50%;
+	padding-left: 0;
+}
+
+.contentSlideShow .slideShowControlContainer {
+	position: absolute;
+	top: 0px;
+	right: 0;
+	margin-top: 0;
+}
+
+.contentSlideShow .slideControl {
+	margin-right: 0;
+	margin-left: 15px;
 }
 
 }
