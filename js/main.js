@@ -38,7 +38,10 @@ $(document).ready(function () {
 		if ($(this).val().indexOf(passwordPlaceholder) === 0) {
 			$passwordInput = $("<input type='password' name='password' class='formField password'/>");
 			$(this).replaceWith($passwordInput);
-			$(".loginForm .password").focus();
+			// hack for IE (reference: http://stackoverflow.com/a/2600261/2621606)
+			setTimeout(function () {
+				$(".loginForm .password")[0].focus();
+			}, 10);
 		}
 	});
 
