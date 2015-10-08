@@ -632,6 +632,7 @@ body {
 
 .headerContainer .loginBar {
 	background-color: #53b8c4;
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#ff53b8c4,endColorstr=#ff53b8c4);
 	padding: 17px;
 }
 
@@ -643,6 +644,7 @@ body > .loginFormOverlay {
 	right: 0;
 	bottom: 0;
 	background-color: rgba(0, 0, 0, 0.8);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#cc000000,endColorstr=#cc000000);
 }
 
 .loginFormContainer {
