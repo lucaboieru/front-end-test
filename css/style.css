@@ -234,6 +234,10 @@ body {
 	-webkit-box-shadow: 0px 3px 24px 0px rgba(0,0,0,0.3);
 	-moz-box-shadow: 0px 3px 24px 0px rgba(0,0,0,0.3);
 	box-shadow: 0px 3px 24px 0px rgba(0,0,0,0.3);
+
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=90, Color='#b2b2b2')";
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=24, Direction=90, Color='#b2b2b2');
+
 	border-bottom: 1px solid rgb(95, 99, 102);
 }
 
