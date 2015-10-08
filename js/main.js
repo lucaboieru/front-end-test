@@ -21,9 +21,14 @@ $(document).ready(function () {
 		resizeSliders();
 	});
 	
+	// prevent document scroll when login overlay is displayed
+	$(".loginFormOverlay").bind("mousewheel DOMMouseScroll", function (e) {
+		e.preventDefault();
+	});
+
 	// listen for show/hide login form event
-	$(".headerContainer .loginBar a.login").click(function () {
-		$(".loginFormContainer").toggleClass("notShown");
+	$(".headerContainer .loginBar a.login, .loginFormOverlay .close").click(function () {
+		$(".loginFormOverlay").toggleClass("notShown");
 	});
 
 	// login form validation
@@ -40,7 +45,7 @@ $(document).ready(function () {
 			$(this).replaceWith($passwordInput);
 			// hack for IE (reference: http://stackoverflow.com/a/2600261/2621606)
 			setTimeout(function () {
-				$(".loginForm .password")[0].focus();
+				$(".loginForm .password").focus();
 			}, 10);
 		}
 	});

@@ -14,6 +14,26 @@
     <![endif]-->
 </head>
 <body>
+    <div class="loginFormOverlay notShown hidden-desktop">
+        <div class="loginFormContainer">
+            <img src="../res/lock.png" class="pull-left tall" />
+            <form class="pull-right loginForm">
+                <div class="pull-left">
+                    <input type="email" name="email" class="formField email" value="Your e-mail" />
+                    <input type="text" name="password" class="formField password" value="Your password" />
+                </div>
+                <button class="submitButton pull-left">
+                    <div class="chevron submitChevron"></div>
+                    &nbsp;GO
+                </button>
+                <div class="clearfix"></div>
+            </form>
+            <div class="clearfix"></div>
+            <div class="close">
+                <img src="../res/close.png" />
+            </div>
+        </div>
+    </div>
     <div class="mainContainer">
         <div class="headerContainer">
             <div class="loginContainer">
@@ -24,20 +44,22 @@
                     </span>
                     <div class="clearfix"></div>
                 </div>
-                <div class="loginFormContainer notShown">
-                    <img src="../res/lock.png" class="pull-left tall" />
-                    <form class="pull-right loginForm">
-                        <div class="pull-left">
-                            <input type="email" name="email" class="formField email" value="Your e-mail" />
-                            <input type="text" name="password" class="formField password" value="Your password" />
-                        </div>
-                        <button class="submitButton pull-left">
-                            <div class="chevron submitChevron"></div>
-                            &nbsp;GO
-                        </button>
+                <div class="loginFormOverlay notShown hidden-mobile">
+                    <div class="loginFormContainer">
+                        <img src="../res/lock.png" class="pull-left tall" />
+                        <form class="pull-right loginForm">
+                            <div class="pull-left">
+                                <input type="email" name="email" class="formField email" value="Your e-mail" />
+                                <input type="text" name="password" class="formField password" value="Your password" />
+                            </div>
+                            <button class="submitButton pull-left">
+                                <div class="chevron submitChevron"></div>
+                                &nbsp;GO
+                            </button>
+                            <div class="clearfix"></div>
+                        </form>
                         <div class="clearfix"></div>
-                    </form>
-                    <div class="clearfix"></div>
+                    </div>
                 </div>
             </div>
             <div class="mainTitle hidden-desktop">

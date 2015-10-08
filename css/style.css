@@ -35,13 +35,6 @@ a {
 	cursor:	pointer;
 }
 
-body {
-    padding: 0;
-    margin: 0;
-    font-family: 'NeoSans-Regular';
-    -webkit-text-size-adjust: 100%;
-}
-
 .chevron {
 	position: relative;
 	padding: 0px;
@@ -59,6 +52,18 @@ body {
 	width: 14px;
 	height: 25px;
 	background-image: url(../res/slideControls.png);
+}
+
+.noScroll {
+	overflow: hidden;
+	position: fixed;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'NeoSans-Regular';
+    -webkit-text-size-adjust: 100%;
 }
 
 .mainContainer {
@@ -79,14 +84,11 @@ body {
 	right: 0;
 	font-size: 11px;
 	font-smooth: never;
-	-webkit-font-smoothing : none;
+	-webkit-font-smoothing: none;
 	letter-spacing: 0.038em;
-	z-index: 10;
-}
-
-.headerContainer .loginContainer * {
 	font-family: "Arial";
 	font-weight: bold;
+	z-index: 10;
 }
 
 .loginContainer .loginBar {
@@ -100,17 +102,21 @@ body {
 	color: #ffffff;
 }
 
-.loginContainer .loginFormContainer {
+.loginFormContainer {
 	margin-top: 1px;
 	padding: 29px 20px 29px 29px;
 	background-color: #fff;
 }
 
-.loginContainer .loginFormContainer * {
+.loginFormContainer * {
 	color: #ffffff;
+	font-weight: bold;
+	font-family: "Arial";
+	font-smooth: never;
+	-webkit-font-smoothing: none;
 }
 
-.loginContainer .loginFormContainer .formField {
+.loginFormContainer .formField {
 	background-color: #ccc;
 	border: none;
 	padding: 6px 6px;
@@ -119,7 +125,7 @@ body {
 	display: block;
 }
 
-.loginContainer .loginFormContainer .formField.email {
+.loginFormContainer .formField.email {
 	margin-bottom: 5px;
 }
 
@@ -532,7 +538,7 @@ body {
 @media screen and (min-width: 1024px) {
 
 .hidden-desktop {
-	display: none;
+	display: none !important;
 }
 
 body {
@@ -548,7 +554,7 @@ body {
 @media screen and (max-width: 1023px) {
 
 .hidden-mobile {
-	display: none;
+	display: none !important;
 }
 
 .mainContainer {
@@ -558,15 +564,42 @@ body {
 
 .headerContainer {
 	margin-bottom: 30px;
+	position: static;
 }
 
 .headerContainer .loginContainer {
 	position: static;
 }
 
-.loginContainer .loginBar {
+.headerContainer .loginBar {
 	background-color: #53b8c4;
 	padding: 17px;
+}
+
+body > .loginFormOverlay {
+	position: fixed;
+	z-index: 100;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+.loginFormContainer {
+	width: 365px;
+	margin: 100px auto;
+	position: relative;
+}
+
+.loginFormContainer .close {
+	position: absolute;
+	bottom: -55px;
+	right: 0;
+	color: #ffffff;
+	padding: 5px 10px;
+	background-color: #53b8c4;
+	cursor: pointer;
 }
 
 .headerContainer .slideShowControlContainer .slideControl#prev {
@@ -618,31 +651,5 @@ body {
 .smallButtonContainer .pull-left {
 	width: 100%;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
