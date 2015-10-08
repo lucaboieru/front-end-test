@@ -1,7 +1,25 @@
 var emailPlaceholder = "Your e-mail";
 var passwordPlaceholder = "Your password";
+var bannerWidth;
+var contentSliderWidth;
+
+function resizeSliders () {
+	// get slider width for both sliders and update slide size
+	bannerWidth = $(".headerContainer .slideShowContainer").width();
+	contentSliderWidth = $(".contentSlideShow").width();
+	$(".headerContainer .slideShowContainer .slide").css("width", bannerWidth);
+	$(".headerContainer .slideShow").css("margin-left", -bannerWidth);
+	$(".contentSlideShow .slide").css("width", contentSliderWidth);
+	$(".contentSlideShow .slideShow").css("margin-left", -contentSliderWidth);
+}
 
 $(document).ready(function () {
+
+	resizeSliders();
+
+	$(window).resize(function () {
+		resizeSliders();
+	});
 	
 	// listen for show/hide login form event
 	$(".headerContainer .loginBar a.login").click(function () {
@@ -37,7 +55,7 @@ $(document).ready(function () {
 	});
 
 	// listen for banner slide show prev/next events
-	$(".headerContainer .slideShowControlContainer #next").click(function () {
+	$(".headerContainer #next").click(function () {
 		$slideShow = $(".headerContainer .slideShow");
 
 		// move slider to the right
@@ -45,20 +63,20 @@ $(document).ready(function () {
 			$slideShow.animate({
 				"margin-left": "0px"
 			}, 500, function () {
-				$slideShow.css("margin-left", "-920px");
+				$slideShow.css("margin-left", "-" + bannerWidth + "px");
 				$slideShow.find(".slide:last").after($slideShow.find(".slide:first"));
 			});
 		}
 	});
 
-	$(".headerContainer .slideShowControlContainer #prev").click(function () {
+	$(".headerContainer #prev").click(function () {
 		$slideShow = $(".headerContainer .slideShow");
 
 		if (!$slideShow.is(":animated")) {
 			$slideShow.css("margin-left", "0px");
 			$slideShow.find(".slide:last").after($slideShow.find(".slide:first"));
 			$slideShow.animate({
-				"margin-left": "-920px"
+				"margin-left": "-" + bannerWidth + "px"
 			}, 500);
 		}
 	});
@@ -76,13 +94,16 @@ $(document).ready(function () {
 			// hide detail view
 			$(this).removeClass("active");
 			$detailView.hide();
+			$(this).find(".plusButton").html("+");
 		} else {
 			// hide all opened detail views
 			$(".bigButtonContainer .bigButton").removeClass("active");
 			$(".bigButtonContainer .bigButtonDetails").hide();
+			$(".bigButtonContainer .bigButton .plusButton").html("+");
 			// show the clicked detail view
 			$(this).addClass("active");
 			$detailView.show();
+			$(this).find(".plusButton").html("-");
 		}
 	});
 
@@ -104,6 +125,33 @@ $(document).ready(function () {
 			$(this).addClass("active");
 			$detailView.show();
 			$(this).find(".plusButton").html("-");
+		}
+	});
+
+	// listen for content slide show prev/next events
+	$(".contentSlideShow #next").click(function () {
+		$slideShow = $(".contentSlideShow .slideShow");
+
+		// move slider to the right
+		if (!$slideShow.is(":animated")) {
+			$slideShow.animate({
+				"margin-left": "0px"
+			}, 500, function () {
+				$slideShow.css("margin-left", "-" + contentSliderWidth + "px");
+				$slideShow.find(".slide:last").after($slideShow.find(".slide:first"));
+			});
+		}
+	});
+
+	$(".contentSlideShow #prev").click(function () {
+		$slideShow = $(".contentSlideShow .slideShow");
+
+		if (!$slideShow.is(":animated")) {
+			$slideShow.css("margin-left", "0px");
+			$slideShow.find(".slide:last").after($slideShow.find(".slide:first"));
+			$slideShow.animate({
+				"margin-left": "-" + contentSliderWidth + "px"
+			}, 500);
 		}
 	});
 });

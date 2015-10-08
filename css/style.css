@@ -35,10 +35,6 @@
 body {
     padding: 0;
     margin: 0;
-    background-image: url("../res/bg.jpg");
-    background-size: 100% auto;
-    background-repeat: no-repeat;
-    background-color: rgb(245, 245, 245);
 }
 
 .chevron {
@@ -81,18 +77,6 @@ body {
 	transform: skew(-35deg, 0deg);
 }
 
-/* Mobile breakpoint */
-@media screen and (max-width: 1023px) {
-
-h1 {
-    color: #ffcc00;
-}
-
-}
-
-/* Desktop breakpoint */
-@media screen and (min-width: 1024px) {
-
 .mainContainer {
     width: 980px;
     margin: 0 auto;
@@ -126,6 +110,12 @@ h1 {
 	background-color: rgba(255, 255, 255, 0.5);
 }
 
+.loginContainer .loginBar a {
+	text-decoration: none;
+	color: #ffffff;
+	cursor: pointer;
+}
+
 .loginContainer .loginFormContainer {
 	margin-top: 1px;
 	padding: 29px 20px 29px 29px;
@@ -133,7 +123,7 @@ h1 {
 }
 
 .loginContainer .loginFormContainer * {
-	color: #fff;
+	color: #ffffff;
 }
 
 .loginContainer .loginFormContainer .formField {
@@ -170,29 +160,20 @@ h1 {
 	left: 13px;
 }
 
-.loginContainer .loginBar a {
-	text-decoration: none;
-	color: #fff;
-	cursor: pointer;
-}
-
 .headerContainer .slideShowContainer {
 	width: 100%;
-	height: 447px;
 	overflow: hidden;
 }
 
 .headerContainer .slideShow {
 	width: 9999px;
-	height: 100%;
 	margin-left: -920px;
 }
 
 .headerContainer .slide {
 	width: 920px;
-	height: 100%;
+	height: 447px;
 	float: left;
-	background-size: 100% auto;
 	position: relative;
 }
 
@@ -228,14 +209,6 @@ h1 {
 	text-align: center;
 	line-height: 34px;
 	font-size: 30px;
-}
-
-.headerContainer .slideShow .slide#slide0 {
-	background-image: url(../res/slide0.jpg);
-}
-
-.headerContainer .slideShow .slide#slide1 {
-	background-image: url(../res/slide1.jpg);
 }
 
 .headerContainer .slideShowControlContainer {
@@ -275,7 +248,7 @@ h1 {
 
 .mainTitle span.hasBackground {
 	background-color: rgb(10, 18, 26);
-	padding: 12px 7px 6px 9px;
+	padding: 8px 7px 6px 9px;
 	-webkit-box-shadow: 0px 3px 24px 0px rgba(0,0,0,0.3);
 	-moz-box-shadow: 0px 3px 24px 0px rgba(0,0,0,0.3);
 	box-shadow: 0px 3px 24px 0px rgba(0,0,0,0.3);
@@ -328,6 +301,7 @@ h1 {
 	padding: 25px 35px 0 23px;
 	float: left;
 	width: 335px;
+	position: relative;
 }
 
 .bigButtonContainer .bigButtonWrapper .infoTitle {
@@ -352,6 +326,14 @@ h1 {
 	margin-top: 2px;
 }
 
+.bigButtonContainer .bigButton .plusButton {
+	color: #53b8c4;
+	font-size: 40px;
+	position: absolute;
+	right: 13px;
+	top: 25px;
+}
+
 .bigButtonContainer .bigButtonWrapper .bigButtonDetails {
 	font-size: 12px;
 	font-family: "Arial";
@@ -365,12 +347,15 @@ h1 {
 }
 
 .smallButtonContainer .smallButtonWrapper{
-	width: 25%;
+	width: 50%;
 	padding: 11px 31px 31px 31px;
 	float: left;
 }
 
 .smallButtonContainer .smallButton {
+	width: 167px;
+	margin-left: auto;
+	margin-right: auto;
 	border-bottom: 3px solid #53b8c4;
 	cursor: pointer;
 }
@@ -407,7 +392,9 @@ h1 {
 	background-color: #53b8c4;
 	color: #ffffff;
 
-	width: 100%;
+	width: 167px;
+	margin-left: auto;
+	margin-right: auto;
 	padding: 30px 10px;
 	display: none;
 
@@ -421,13 +408,17 @@ h1 {
 	box-shadow: 0px 10px 16px 0px rgba(0,0,0,0.28);
 }
 
+.smallButtonContainer .viewMoreRow {
+	padding: 16px 0;
+}
+
 .smallButtonContainer .viewMoreWrapper {
 	border-bottom: 1px solid #53b8c4;
 	color: #53b8c4;
 	text-align: center;
 
 	width: 106px;
-	margin: 16px auto;
+	margin: 0 auto;
 }
 
 .smallButtonContainer .viewMore {
@@ -438,13 +429,13 @@ h1 {
 
 .contentSlideShow {
 	width: 100%;
-	height: 184px;
-	/*overflow: hidden;*/
+	margin-top: 35px;
+	overflow: hidden;
 }
 
 .contentSlideShow .slideShow {
 	width: 9999px;
-	height: 100%;
+	height: 184px;
 	margin-left: -920px;
 }
 
@@ -470,11 +461,153 @@ h1 {
 }
 
 .contentSlideShow .slideInfo {
-	padding: 45px 70px;
+	padding: 25px 70px;
 }
 
 .contentSlideShow .slideInfo .title {
-	font-size: 40px;
+	font-size: 30px;
+	color: #666666;
 }
+
+.contentSlideShow .slideShowControlContainer {
+	margin-top: 1px;
+}
+
+.contentSlideShow .slideControl {
+	width: 49px;
+	height: 41px;
+	padding: 8px 17px;
+	background-color: #53b8c4;
+	float: left;
+	margin-right: 2px;
+	cursor: pointer;
+}
+
+.contentSlideShow .slideControl .arrow {
+	width: 14px;
+	height: 25px;
+	background-image: url(../res/slideControls.png);
+}
+
+.contentSlideShow .slideControl#prev .arrow {
+	background-position: 0 0;
+}
+
+.contentSlideShow .slideControl#next .arrow {
+	background-position: 17px 0;
+}
+
+/* Desktop breakpoint */
+@media screen and (min-width: 1024px) {
+
+.hidden-desktop {
+	display: none;
+}
+
+body {
+	background-image: url("../res/bg.jpg");
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-color: rgb(245, 245, 245);
+}
+
+}
+
+/* Mobile breakpoint */
+@media screen and (max-width: 1023px) {
+
+.hidden-mobile {
+	display: none;
+}
+
+.mainContainer {
+	width: 100%;
+	padding: 0 20px 20px 20px;
+}
+
+.headerContainer {
+	margin-bottom: 30px;
+}
+
+.headerContainer .loginContainer {
+	position: static;
+}
+
+.loginContainer .loginBar {
+	background-color: #53b8c4;
+	padding: 17px;
+}
+
+.headerContainer .slideShowControlContainer .slideControl#prev {
+	float: left;
+}
+
+.mainTitle {
+	margin: 44px 0;
+}
+
+.headerContainer .slide {
+	height: auto;
+}
+
+.headerContainer .slideInfo {
+	bottom: 31px;
+}
+
+.bigButtonContainer .bigButtonWrapper {
+	width: 100%;
+	margin-bottom: 15px;
+}
+
+.bigButtonContainer .bigButtonWrapper .bigButton {
+	width: 100%;
+	position: relative;
+}
+
+.bigButtonContainer .bigButtonWrapper .info {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 115px;
+	padding: 25px 23px 0 23px;
+	width: auto;
+}
+
+.smallButtonContainer .smallButtonWrapper {
+	width: 50%;
+	padding: 11px 31px 31px 31px;
+	float: left;
+}
+
+.smallButtonContainer .pull-left {
+	width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
