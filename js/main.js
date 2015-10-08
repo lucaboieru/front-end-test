@@ -22,7 +22,7 @@ $(document).ready(function () {
 	});
 	
 	// prevent document scroll when login overlay is displayed
-	$(".loginFormOverlay").bind("mousewheel DOMMouseScroll", function (e) {
+	$("body > .loginFormOverlay").bind("mousewheel DOMMouseScroll", function (e) {
 		e.preventDefault();
 	});
 
